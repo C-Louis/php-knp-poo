@@ -25,7 +25,7 @@ class ShipLoader
 
     private function queryForShips() {
         // CREATE THE TABLE
-        $pdo = new PDO('mysql:host=localhost;dbname=oo_battle', 'root');
+        $pdo = new PDO('mysql:host=localhost;dbname=oo_battle', 'root','password');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         //Query
         $statement = $pdo->prepare('SELECT * FROM ship');

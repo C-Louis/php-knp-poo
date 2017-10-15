@@ -8,6 +8,7 @@ class BattleResult
     private $losingShip;
 
     //CONSTRUCTOR
+
     /**
      * BattleResult constructor.
      * @param $usedJediPower
@@ -23,6 +24,7 @@ class BattleResult
 
 
     //GETTERS AND SETTERS
+
     /**
      * @return boolean
      */
@@ -74,10 +76,10 @@ class BattleResult
     /**
      * @return bool
      */
-    public function isThereAWinner() {
+    public function isThereAWinner()
+    {
         return $this->getWinningShip() !== null;
     }
-
 
 
 }

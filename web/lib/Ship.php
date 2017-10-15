@@ -1,7 +1,8 @@
 <?php
 
 
-class Ship {
+class Ship
+{
 
     // Attributes
     private $name;
@@ -11,6 +12,11 @@ class Ship {
     private $underRepair;
 
     // Constructor
+
+    /**
+     * Ship constructor.
+     * @param $name
+     */
     public function __construct($name)
     {
         $this->name = $name;
@@ -18,18 +24,25 @@ class Ship {
     }
 
     // Getters and setters
-    public function getName() {
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
         return strtoupper($this->name);
     }
 
-    public function setStrength($strength) {
-        if(!is_numeric($strength)) {
-            throw new Exception('Invalid strength passed '.$strength);
+    public function setStrength($strength)
+    {
+        if (!is_numeric($strength)) {
+            throw new Exception('Invalid strength passed ' . $strength);
         }
         $this->strength = $strength;
     }
 
-    public function getStrength() {
+    public function getStrength()
+    {
         return $this->strength;
     }
 
@@ -73,12 +86,21 @@ class Ship {
         $this->name = $name;
     }
 
-    // Methods
-    public function sayHello() {
+    // METHODS
+
+    /**
+     *
+     */
+    public function sayHello()
+    {
         echo 'Hello';
     }
 
-    public function getNameAndSpecs() {
+    /**
+     * @return string
+     */
+    public function getNameAndSpecs()
+    {
         return sprintf(
             '%s: w:%s, j:%s, s:%s',
             $this->name,
@@ -88,12 +110,21 @@ class Ship {
         );
     }
 
-    public function doesGivenShipHaveMoreStrength($givenShip) {
+    /**
+     * @param $givenShip
+     * @return bool
+     */
+    public function doesGivenShipHaveMoreStrength($givenShip)
+    {
         return $givenShip->strength > $this->strength;
     }
 
-    public function isFunctional() {
+    /**
+     * @return bool
+     */
+    public function isFunctional()
+    {
         return !$this->underRepair;
-}
+    }
 
 }
