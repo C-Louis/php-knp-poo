@@ -1,12 +1,10 @@
 <?php
 require __DIR__ . '/bootstrap.php';
 
+// Create a new PDO object.
+$container = new Container($configuration);
 // Fetch all ships.
-$shipLoader = new ShipLoader(
-    $configuration['db_dsn'],
-    $configuration['db_user'],
-    $configuration['db_pass']
-);
+$shipLoader = $container->getShipLoader();
 $ships = $shipLoader->getShips();
 
 // Set possible error message.

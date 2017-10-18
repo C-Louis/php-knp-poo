@@ -10,15 +10,11 @@ class ShipLoader
 
     /**
      * ShipLoader constructor.
-     * @param $dbDsn
-     * @param $dbUser
-     * @param $dbPass
+     * @param PDO $pdo
      */
-    public function __construct($dbDsn, $dbUser, $dbPass)
+    public function __construct(PDO $pdo)
     {
-        $this->dbDsn = $dbDsn;
-        $this->dbUser = $dbUser;
-        $this->dbPass = $dbPass;
+        $this->pdo = $pdo;
     }
 
     /**

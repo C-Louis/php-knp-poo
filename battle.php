@@ -1,12 +1,10 @@
 <?php
 require __DIR__ . '/bootstrap.php';
 
-// Fetch all ships
-$shipLoader = new ShipLoader(
-    $configuration['db_dsn'],
-    $configuration['db_user'],
-    $configuration['db_pass']
-);
+// Create a new PDO object.
+$container = new Container($configuration);
+// Fetch all ships.
+$shipLoader = $container->getShipLoader();
 $ships = $shipLoader->getShips();
 
 $ship1Id = isset($_POST['ship1_id']) ? $_POST['ship1_id'] : null;
@@ -33,9 +31,7 @@ if ($ship1Quantity <= 0 || $ship2Quantity <= 0) {
     die;
 }
 
-
-
-$battleManager = new BattleManager();
+$battleManager = $container->getBattleManager();
 $battleResult = $battleManager->battle($ship1, $ship1Quantity, $ship2, $ship2Quantity);
 ?>
 
