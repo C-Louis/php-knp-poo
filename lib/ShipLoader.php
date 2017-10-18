@@ -2,6 +2,7 @@
 
 class ShipLoader
 {
+    private $pdo;
 
     /**
      * Get all ships fetched from database and stored in a new array.
@@ -26,9 +27,7 @@ class ShipLoader
      * @return null|Ship
      */
     public function findOneById($id) {
-        // CREATE THE TABLE
-        $pdo = new PDO('mysql:host=localhost;dbname=oo_battle', 'root');
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $pdo = $this->getPDO();
         //Prepared statement to avoid sql injection attacks.
         $statement = $pdo->prepare('SELECT * FROM ship WHERE id = :id');
         $statement->execute(array('id' => $id));
@@ -62,9 +61,7 @@ class ShipLoader
      * @return array
      */
     private function queryForShips() {
-        // CREATE THE TABLE
-        $pdo = new PDO('mysql:host=localhost;dbname=oo_battle', 'root');
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $pdo = $this->getPDO();
         //Query
         $statement = $pdo->prepare('SELECT * FROM ship');
         $statement->execute();
@@ -72,4 +69,19 @@ class ShipLoader
 
         return $shipsArray;
     }
+
+    /**
+     * @return PDO
+     */
+    private function getPDO()
+    {
+        if($this->pdo === null) {
+            $pdo = new PDO('mysql:host=localhost;dbname=oo_battle', 'root');
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $this->pdo = $pdo;
+        }
+        return $this->pdo;
+    }
+
 }
