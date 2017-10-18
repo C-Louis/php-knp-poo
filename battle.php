@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/bootstrap.php';
 
-
+// Fetch all ships
 $shipLoader = new ShipLoader();
 $ships = $shipLoader->getShips();
 

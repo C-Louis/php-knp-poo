@@ -1,20 +1,20 @@
 <?php
 
-/*
+/**
  * SETTINGS!
  */
 $databaseName = 'oo_battle';
 $databaseUser = 'root';
 $databasePassword = 'password';
 
-/*
+/**
  * CREATE THE DATABASE
  */
 $pdoDatabase = new PDO('mysql:host=localhost', $databaseUser, $databasePassword);
 $pdoDatabase->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $pdoDatabase->exec('CREATE DATABASE IF NOT EXISTS oo_battle');
 
-/*
+/**
  * CREATE THE TABLE
  */
 $pdo = new PDO('mysql:host=localhost;dbname='.$databaseName, $databaseUser, $databasePassword);
@@ -33,7 +33,7 @@ $pdo->exec('CREATE TABLE `ship` (
  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci');
 
-/*
+/**
  * INSERT SOME DATA!
  */
 $pdo->exec('INSERT INTO ship
@@ -53,4 +53,7 @@ $pdo->exec('INSERT INTO ship
     ("RZ-1 A-wing interceptor", 4, 4, 50, "empire")'
 );
 
+/**
+ * To test if it works.
+ */
 echo "Ding!\n";

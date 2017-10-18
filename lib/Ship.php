@@ -33,6 +33,10 @@ class Ship
         return strtoupper($this->name);
     }
 
+    /**
+     * @param $strength
+     * @throws Exception
+     */
     public function setStrength($strength)
     {
         if (!is_numeric($strength)) {
@@ -41,6 +45,9 @@ class Ship
         $this->strength = $strength;
     }
 
+    /**
+     * @return int
+     */
     public function getStrength()
     {
         return $this->strength;
@@ -89,7 +96,7 @@ class Ship
     // METHODS
 
     /**
-     *
+     * TODO: remove this test function
      */
     public function sayHello()
     {
@@ -111,6 +118,7 @@ class Ship
     }
 
     /**
+     * Check if this ship has more strength than another one set as parameter.
      * @param $givenShip
      * @return bool
      */
@@ -120,6 +128,7 @@ class Ship
     }
 
     /**
+     * Check if a ship is not under repair.
      * @return bool
      */
     public function isFunctional()

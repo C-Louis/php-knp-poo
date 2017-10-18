@@ -73,7 +73,10 @@ class BattleResult
         $this->losingShip = $losingShip;
     }
 
+    // METHODS
+
     /**
+     * Check if there is a winning ship in this battle.
      * @return bool
      */
     public function isThereAWinner()

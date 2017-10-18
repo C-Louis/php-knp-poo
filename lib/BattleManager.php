@@ -62,6 +62,7 @@ class BattleManager
     }
 
     /**
+     * Check if the ship used its JediFactor.
      * @param Ship $ship
      * @return bool
      */

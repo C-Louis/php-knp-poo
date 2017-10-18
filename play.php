@@ -4,6 +4,7 @@ require_once __DIR__.'/lib/Ship.php';
 
 
 /**
+ *
  * @param Ship $someShip
  */
 function printShipSummary($someShip) {

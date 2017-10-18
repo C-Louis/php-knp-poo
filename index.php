@@ -1,9 +1,11 @@
 <?php
 require __DIR__ . '/bootstrap.php';
 
+// Fetch all ships.
 $shipLoader = new ShipLoader();
 $ships = $shipLoader->getShips();
 
+// Set possible error message.
 $errorMessage = '';
 if (isset($_GET['error'])) {
     switch ($_GET['error']) {
