@@ -2,7 +2,11 @@
 require __DIR__ . '/bootstrap.php';
 
 // Fetch all ships.
-$shipLoader = new ShipLoader();
+$shipLoader = new ShipLoader(
+    $configuration['db_dsn'],
+    $configuration['db_user'],
+    $configuration['db_pass']
+);
 $ships = $shipLoader->getShips();
 
 // Set possible error message.

@@ -4,6 +4,23 @@ class ShipLoader
 {
     private $pdo;
 
+    private $dbDsn;
+    private $dbUser;
+    private $dbPass;
+
+    /**
+     * ShipLoader constructor.
+     * @param $dbDsn
+     * @param $dbUser
+     * @param $dbPass
+     */
+    public function __construct($dbDsn, $dbUser, $dbPass)
+    {
+        $this->dbDsn = $dbDsn;
+        $this->dbUser = $dbUser;
+        $this->dbPass = $dbPass;
+    }
+
     /**
      * Get all ships fetched from database and stored in a new array.
      * @return Ship[]
@@ -76,7 +93,7 @@ class ShipLoader
     private function getPDO()
     {
         if($this->pdo === null) {
-            $pdo = new PDO('mysql:host=localhost;dbname=oo_battle', 'root');
+            $pdo = new PDO($this->dbDsn, $this->dbUser, $this->dbPass);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             $this->pdo = $pdo;
