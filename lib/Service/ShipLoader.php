@@ -60,7 +60,14 @@ class ShipLoader
      * @return Ship
      */
     private function createShipFromData(array $shipData) {
-        $ship = new Ship($shipData['name']);
+
+        // Create object from Ship class or RebelShip class depending on its team.
+        if ($shipData['team'] == 'rebel') {
+            $ship = new RebelShip($shipData['name']);
+        } else {
+            $ship = new Ship($shipData['name']);
+        }
+
         $ship->setId($shipData['id']);
         $ship->setWeaponPower($shipData['weapon_power']);
         $ship->setJediFactor($shipData['jedi_factor']);

@@ -7,6 +7,11 @@ $container = new Container($configuration);
 $shipLoader = $container->getShipLoader();
 $ships = $shipLoader->getShips();
 
+// Create a new RebelShip
+$rebelShip = new RebelShip('My new rebel ship');
+// Add it to the array of ships.
+$ships[] = $rebelShip;
+
 // Set possible error message.
 $errorMessage = '';
 if (isset($_GET['error'])) {
@@ -65,6 +70,8 @@ if (isset($_GET['error'])) {
                         <th>Weapon Power</th>
                         <th>Jedi Factor</th>
                         <th>Strength</th>
+                        <th>Status</th>
+                        <th>Type</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -81,6 +88,7 @@ if (isset($_GET['error'])) {
                                     <i class="fa fa-cloud"></i>
                                 <?php endif; ?>
                             </td>
+                            <td><?php echo $ship->getType(); ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

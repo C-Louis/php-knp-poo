@@ -110,6 +110,7 @@ class Ship
         $this->name = $name;
     }
 
+
     // METHODS
 
     /**
@@ -151,6 +152,15 @@ class Ship
     public function isFunctional()
     {
         return !$this->underRepair;
+    }
+
+    /**
+     * Sets the RebelShips type as 'empire'.
+     * @return string
+     */
+    public function getType()
+    {
+        return 'Empire';
     }
 
 }

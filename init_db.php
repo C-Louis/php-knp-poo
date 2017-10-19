@@ -37,20 +37,20 @@ $pdo->exec('CREATE TABLE `ship` (
  * INSERT SOME DATA!
  */
 $pdo->exec('INSERT INTO ship
-    (name, weapon_power, jedi_factor, strength, is_under_repair) VALUES
-    ("Jedi Starfighter", 5, 15, 30, 0)'
+    (name, weapon_power, jedi_factor, strength, is_under_repair, team) VALUES
+    ("Jedi Starfighter", 5, 15, 30, 0, "rebel")'
 );
 $pdo->exec('INSERT INTO ship
-    (name, weapon_power, jedi_factor, strength, is_under_repair) VALUES
-    ("CloakShape Fighter", 2, 2, 70, 0)'
+    (name, weapon_power, jedi_factor, strength, is_under_repair, team) VALUES
+    ("CloakShape Fighter", 2, 2, 70, 0, "rebel")'
 );
 $pdo->exec('INSERT INTO ship
-    (name, weapon_power, jedi_factor, strength, is_under_repair) VALUES
-    ("Super Star Destroyer", 70, 0, 500, 0)'
+    (name, weapon_power, jedi_factor, strength, is_under_repair, team) VALUES
+    ("Super Star Destroyer", 70, 0, 500, 0, "empire")'
 );
 $pdo->exec('INSERT INTO ship
-    (name, weapon_power, jedi_factor, strength, is_under_repair) VALUES
-    ("RZ-1 A-wing interceptor", 4, 4, 50, 0)'
+    (name, weapon_power, jedi_factor, strength, is_under_repair, team) VALUES
+    ("RZ-1 A-wing interceptor", 4, 4, 50, 0, "empire")'
 );
 
 /**
