@@ -122,17 +122,28 @@ class Ship
     }
 
     /**
+     * @param bool $useShortFormat
      * @return string
      */
-    public function getNameAndSpecs()
+    public function getNameAndSpecs($useShortFormat = false)
     {
-        return sprintf(
-            '%s: w:%s, j:%s, s:%s',
-            $this->name,
-            $this->weaponPower,
-            $this->jediFactor,
-            $this->strength
-        );
+        if ($useShortFormat) {
+            return sprintf(
+                '%s: %s/%s/%s',
+                $this->name,
+                $this->weaponPower,
+                $this->jediFactor,
+                $this->strength
+            );
+        } else {
+            return sprintf(
+                '%s: w:%s, j:%s, s:%s',
+                $this->name,
+                $this->weaponPower,
+                $this->jediFactor,
+                $this->strength
+            );
+        }
     }
 
     /**

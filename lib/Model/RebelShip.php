@@ -30,4 +30,15 @@ class RebelShip extends Ship
     {
         return true;
     }
+
+    /**
+     * @param bool $useShortFormat
+     * @return string
+     */
+    public function getNameAndSpecs($useShortFormat = false)
+    {
+        $val = parent::getNameAndSpecs($useShortFormat);
+        $val .= ' (Rebel)';
+        return $val;
+    }
 }
