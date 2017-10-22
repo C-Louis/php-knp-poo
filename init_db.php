@@ -30,6 +30,7 @@ $pdo->exec('CREATE TABLE `ship` (
  `jedi_factor` int(4) NOT NULL,
  `strength` int(4) NOT NULL,
  `is_under_repair` tinyint(1) NOT NULL,
+ `team`varchar(255) NOT NULL,
  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci');
 
